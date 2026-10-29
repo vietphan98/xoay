@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xoay"
+version = "0.1.0"
+description = "Trợ lý code trên terminal, tự đổi model khi hết quota"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Việt Phan"}]
+
+[project.scripts]
+xoay = "xoay.cli:main"
+
+[tool.setuptools]
+packages = ["xoay"]

@@ -1,0 +1,35 @@
+# Cấu hình xoay. KHÔNG ghi API key ở đây — chỉ ghi tên biến môi trường.
+[general]
+state_file = "~/.xoay/usage.json"
+
+# Model chính (đứng đầu), sau đó là các model dự phòng theo thứ tự ưu tiên.
+[[models]]
+name = "chinh"
+provider = "openrouter"
+model = "deepseek/deepseek-chat-v3-0324:free"
+api_key_env = "OPENROUTER_API_KEY"
+rpm = 20
+rpd = 50
+
+[[models]]
+name = "gemini-flash"
+provider = "gemini"
+model = "gemini-2.0-flash"
+api_key_env = "GEMINI_API_KEY"
+rpm = 15
+rpd = 1500
+tpd = 1000000
+
+[[models]]
+name = "openrouter-llama"
+provider = "openrouter"
+model = "meta-llama/llama-3.3-70b-instruct:free"
+api_key_env = "OPENROUTER_API_KEY"
+rpm = 20
+rpd = 50
+
+[[models]]
+name = "ollama-local"
+provider = "ollama"
+model = "qwen2.5-coder:7b"
+base_url = "http://localhost:11434"
